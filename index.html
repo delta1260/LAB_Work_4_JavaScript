@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>INDEX</title>
+</head>
+
+<body>
+    <script>
+        let pop_up_courses = prompt("How many courses did you finish?",0);
+        let numOfCourses = parseInt(pop_up_courses);
+        let courseMarks = [];
+        let sum = 0;
+        let average = 0.0;
+        if (isNaN(numOfCourses)) {
+            document.write("Invalid input");
+        }else{
+            for(let i=1;i<=parseInt(pop_up_courses);i++){
+                let pop_up_mark = prompt("Enter your mark for course "+i);
+                courseMarks.push(parseInt(pop_up_mark));
+            }
+        
+            for(let i in courseMarks){
+                document.write('<p>'+courseMarks[i]+'</p>')
+            }
+            for(let i=0;i<courseMarks.length;i++){
+                sum+=courseMarks[i];
+            }
+            average = sum/parseInt(pop_up_courses);
+
+           document.write('<br>');
+
+            if(average >= 90 && average <=100){
+                document.write("Your final average is "+ average.toFixed(2) +"."+" Your grade is A+");
+            }else if(average >= 80 && average <=89){
+                document.write("Your final average is "+ average.toFixed(2) +"."+" Your grade is B");
+            }else if(average >= 70 && average <=79){
+                document.write("Your final average is "+ average.toFixed(2) +"."+" Your grade is C");
+            }else if(average >= 60 && average <=69){
+                document.write("Your final average is "+ average.toFixed(2) +"."+" Your grade is D");
+            }else if(average <60){
+                document.write("Your final average is "+ average.toFixed(2) +"."+" Your grade is F");
+            }else{
+                document.write("Sorry, All the marks have to be from minimum 0 to maximum 100!");
+            }
+
+            // display console 
+            console.log("Number of courses finished: " + numOfCourses);
+            console.log("List of marks: " + courseMarks);
+            console.log("value of the sum: " + sum);
+            console.log("value of the average: " + average);
+        }
+    </script>
+ 
+</body>
+
+</html>
